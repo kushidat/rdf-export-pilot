@@ -1,0 +1,4 @@
+subject,predicate,object
+<http://example.org/Alice>,<http://xmlns.com/foaf/0.1/name>,"""Alice"""
+<http://example.org/Alice>,<http://xmlns.com/foaf/0.1/knows>,<http://example.org/Bob>
+<http://example.org/Bob>,<http://xmlns.com/foaf/0.1/name>,"""Bob"""
