@@ -39,3 +39,5 @@ GitHub の **Actions** タブで **Convert RDF sample** を確認できます。
 ## ライセンス
 
 MIT（必要に応じて変更してください）
+
+- `output/predicate_counts.csv`（predicateごとの件数）
