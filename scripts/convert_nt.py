@@ -1,6 +1,7 @@
 import csv
 import json
 import argparse
+from collections import Counter
 from pathlib import Path
 
 def parse_args():
@@ -44,6 +45,15 @@ def main():
         w = csv.DictWriter(f, fieldnames=["subject", "predicate", "object"], delimiter="\t")
         w.writeheader()
         w.writerows(rows)
+
+
+    # predicate counts
+    counts = Counter(r["predicate"] for r in rows)
+    with (out_dir / "predicate_counts.csv").open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["predicate", "count"])
+        for pred, cnt in counts.most_common():
+            w.writerow([pred, cnt])
 
     # JSON
     (out_dir / "triples.json").write_text(
